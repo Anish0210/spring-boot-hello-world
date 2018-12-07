@@ -14,6 +14,7 @@ public class WidgetController {
 
     @RequestMapping(method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public Widget index() {
-        return new Widget("green", 10, 7);
+    	
+        return new Widget("Hello World", 10, 7);
     }
 }
