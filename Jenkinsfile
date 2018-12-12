@@ -18,7 +18,7 @@ cpipeline {
           def mvnHome = tool 'Maven'
           
           try {
-                        sh "clean install"
+                        sh "mvn clean install"
                         currentBuild.result = 'SUCCESS'
                     } catch (Exception err) {
                         currentBuild.result = 'FAILURE'
