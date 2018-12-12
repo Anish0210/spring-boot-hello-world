@@ -25,10 +25,10 @@ cpipeline {
                         sh "exit 1"
                     }
           
-        
+        }}
         
         }
         
         
-      }
+      }}
          
