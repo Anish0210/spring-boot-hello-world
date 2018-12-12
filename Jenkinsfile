@@ -1,13 +1,19 @@
 pipeline {
   agent any
   stages {
+    stage('Checkout') {
+            steps {
+               
+                    git credentialsId: 'GITHUB', url: 'https://github.com/Anish0210/spring-boot-hello-world'
+                
+            }
+        }
+      
     stage ('Build') {
       steps {
-        echo 'Running build Automation'
-        sh './gradlew build --no-daemon'
-        archiveArtifacts artifacts: 'dist/sampleapp.zip'
-         }
-       }
-     }
-    }
-
+        echo 'Running Build Automation '
+        
+            }
+          }
+        }
+      }
