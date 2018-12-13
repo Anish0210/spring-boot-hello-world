@@ -35,20 +35,23 @@
 
 	<build>
 		<plugins>
+			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+				<executions> <execution> <goals> <goal>repackage</goal> </goals> <configuration> 
+				<classifier>spring-boot</classifier> <mainClass> com.patrickgrimard.Application 
+				</mainClass> </configuration> </execution> </executions> </plugin> -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.1.1.RELEASE</version>
+				<configuration>
+					<mainClass>${com.patrickgrimard.Application}</mainClass>
+					<layout>ZIP</layout>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
 							<goal>repackage</goal>
 						</goals>
-						<configuration>
-							<classifier>spring-boot</classifier>
-							<mainClass>
-								com.patrickgrimard.Application
-							</mainClass>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
