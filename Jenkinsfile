@@ -16,7 +16,7 @@ pipeline {
           
           checkout scm
           
-          def mvnHome = tool 'Maven'
+         
           
           try {
                         sh "mvn clean install"
