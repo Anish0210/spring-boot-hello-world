@@ -15,6 +15,6 @@ public class WidgetController {
     @RequestMapping(method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public String index() {
     	
-        return "Hello World";
+        return "###### $$$$$$ Hello DevOps World $$$$$$ ########";
     }
 }
