@@ -27,22 +27,7 @@ pipeline {
         
         }
     
-    stages {
-    stage('Building image') {
-      steps{
-        script {
-          docker.build registry + ":$BUILD_NUMBER"
-        }
-      }
-    }
-  }
-    stage('deploy') {
-      steps {    
-        script {    
-          docker.build  "gcr.io/myporject/mydockerimage:1"
-        } 
-      }
-    }
+    
         
         
       }}
