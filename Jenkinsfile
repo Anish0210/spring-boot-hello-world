@@ -31,7 +31,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh "docker build -t"
+          sh "docker build -t anish0210/springboot ."
           
         
       }
