@@ -35,7 +35,7 @@ pipeline {
 
 
         sh "docker build -t anish0210/springboot ."
-          sh "docker login --username='anish210' --password='env.DOCERHUB'"
+          sh "docker login --username='anish0210' --password='env.DOCERHUB'"
           sh "docker push anish0210/springboot"
           
           
