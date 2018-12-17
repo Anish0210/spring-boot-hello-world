@@ -32,6 +32,7 @@ pipeline {
       steps{
         script {
           sh "docker build -t anish0210/springboot ."
+          sh "docker push anish0210/springboot ."
           
         
       }
