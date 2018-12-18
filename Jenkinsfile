@@ -40,8 +40,7 @@ pipeline {
     stage('Deploy') {
             steps {
                 echo 'Deploying'
-                sh "kubectl create -f  /root/deployment/myapp.yaml"
-                sh "kubectl create -f  /root/deployment/myappservice.yaml"
+                sh "kubectl create -f myapp.yaml"
                 sh "curl http://127.0.0.1:30036/api"
             }
         }
