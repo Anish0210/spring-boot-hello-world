@@ -1,6 +1,7 @@
 apiVersion: apps/v1betav1
 kind: Deployment
 metadata:
+  namespace: devops1
   name: jenkins
   labels:
     app: jenkins
@@ -23,6 +24,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:  
+  namespace: devops1
   name: jenkinsService
 spec:
   selector:    
