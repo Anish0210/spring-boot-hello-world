@@ -35,6 +35,15 @@ pipeline {
           sh "docker run -p 3000:3000 anish0210/springboot"            
       }
     }
-  }  
+  } 
+    
+    stage('Deploy') {
+            steps {
+                echo 'Deploying'
+                sh "kubectl create -f  /root/deployment/myapp.yaml"
+                sh "kubectl create -f  /root/deployment/myappservice.yaml"
+                sh "curl http://127.0.0.1:30036/api"
+            }
+        }
       }}
          
