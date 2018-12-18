@@ -19,3 +19,18 @@ spec:
         image: anish0210/springboot
         ports:
         - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:  
+  name: myapp
+spec:
+  selector:    
+    app: myapp
+  type: NodePort
+  ports:  
+  - name: http
+    port: 3000
+    targetPort: 3000
+    nodePort: 30036
+    protocol: TCP
