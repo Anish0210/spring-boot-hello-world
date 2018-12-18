@@ -20,6 +20,9 @@ spec:
         image: anish0210/jenkins
         ports:
         - containerPort: 8080
+     volumes:
+      -name: docker-sock
+       hostpath: /var/run/docker.sock 
 ---
 apiVersion: v1
 kind: Service
