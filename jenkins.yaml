@@ -1,4 +1,4 @@
-apiVersion: apps/v1betav1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   namespace: devops1
@@ -17,23 +17,23 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: anish0210/jenkins
-        ports:
-        - containerPort: 8080
-     volumes:
+        image: nmsrinivas/dockerjenkins
+      ports:
+        - containerPort: 3000
+      volumes:
       -name: docker-sock
-       hostpath: /var/run/docker.sock 
+      hostPath: /var/run/docker.sock
 ---
 apiVersion: v1
 kind: Service
-metadata:  
+metadata:
   namespace: devops1
-  name: jenkinsService
+  name: jenkinsservice
 spec:
-  selector:    
+  selector:
     app: jenkins
   type: NodePort
-  ports:  
+  ports:
   - name: http
     port: 8080
     targetPort: 8080
