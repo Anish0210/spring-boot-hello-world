@@ -45,8 +45,8 @@ pipeline {
 
 //Deploy the docker image as a service using Kubernetes CD plugin
 kubernetesDeploy (
-kubecongifId: 'kubeconfig'
-configs: 'myapp.yml' ,
+kubecongifId: 'kubeconfig',
+configs: 'myapp.yaml',
 enableConfigSubstitution: false
 )
 }
