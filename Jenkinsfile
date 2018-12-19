@@ -44,7 +44,7 @@ pipeline {
             steps {
                 echo 'Deploying'
                 sh "kubectl create -f myapp.yaml"
-                sh "curl http://127.0.0.1:30036/api"
+             
             }
         }
       }}
