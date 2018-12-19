@@ -8,6 +8,7 @@ pipeline {
           /*sh "yum install -y maven"*/
           sh 'sudo apt-get update -y'
           sh 'sudo apt -y install openjdk-8-jdk'
+          sh 'sudo apt -y install maven'
           
         }
       } 
