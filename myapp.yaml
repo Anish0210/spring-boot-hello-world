@@ -1,6 +1,7 @@
-apiVersion: apps/v1betav1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
+  namespace: devops1
   name: spring-boot-app
   labels:
     app: myapp
@@ -18,19 +19,20 @@ spec:
       - name: myapp
         image: anish0210/springboot
         ports:
-        - containerPort: 3000
+          - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
-metadata:  
-  name: myapp
+metadata:
+  namespace: devops1
+  name: spring-boot-app-service
 spec:
-  selector:    
+  selector:
     app: myapp
   type: NodePort
-  ports:  
+  ports:
   - name: http
     port: 3000
     targetPort: 3000
-    nodePort: 30036
+    nodePort: 30051
     protocol: TCP
