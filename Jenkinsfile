@@ -40,12 +40,15 @@ pipeline {
     }
   } 
     
-    stage('Deploy') {
-            steps {
-                echo 'Deploying'
-                sh "kubectl create -f myapp.yaml"
-             
-            }
-        }
+    stage('deploy the app')
+{
+
+//Deploy the docker image as a service using Kubernetes CD plugin
+kubernetesDeploy (
+kubecongifId: 'kubeconfig'
+configs: 'myapp.yml' ,
+enableConfigSubstitution: false
+)
+}
       }}
          
