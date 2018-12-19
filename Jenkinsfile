@@ -7,7 +7,7 @@ pipeline {
           checkout scm
           /*sh "yum install -y maven"*/
           sh 'sudo apt-get update -y'
-          sh 'sudo apt -y install openjdk-8u191-b12-jdk'
+          sh 'sudo apt -y install default-jdk'
           sh 'sudo apt -y install maven'
           
         }
