@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  namespace: devops1
+  name: ddgrafana
+  labels:
+    app: ddgrafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ddgrafana
+  template:
+    metadata:
+      labels:
+        app: ddgrafana
+    spec:
+      containers:
+      - name: ddgrafana
+        image: grafana/grafana
+        ports:
+          - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: devops1
+  name: ddgrafana-service
+spec:
+  selector:
+    app: ddgrafana
+  type: NodePort
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000
+    nodePort: 30052
+    protocol: TCP
