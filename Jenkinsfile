@@ -41,14 +41,14 @@ pipeline {
   } 
     
     stage('deploy the app')
-{steps{
+{
 
 //Deploy the docker image as a service using Kubernetes CD plugin
 kubernetesDeploy (
-kubecongifId: 'kubeconfig',
-configs: 'myapp.yaml',
-enableConfigSubstitution: false
+  kubeconfigId: 'kubeconfig',
+  configs: 'myapp.yaml',
+  enableConfigSubstitution: false
 )
-}}
+}
       }}
          
