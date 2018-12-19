@@ -1,0 +1,38 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  namespace: devops1
+  name: ddprometheus
+  labels:
+    app: ddprometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ddprometheus
+  template:
+    metadata:
+      labels:
+        app: ddprometheus
+    spec:
+      containers:
+      - name: ddprometheus
+        image: prom/prometheus
+        ports:
+          - containerPort: 9090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: devops1
+  name: ddprometheus-service
+spec:
+  selector:
+    app: ddprometheus
+  type: NodePort
+  ports:
+  - name: http
+    port: 9090
+    targetPort: 9090
+    nodePort: 30053
+    protocol: TCP
