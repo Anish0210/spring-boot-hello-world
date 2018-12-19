@@ -5,7 +5,9 @@ pipeline {
       steps {
         script {
           checkout scm
-          sh "yum install -y maven"
+          /*sh "yum install -y maven"*/
+          sh 'sudo apt-get update -y'
+          sh 'sudo apt -y install openjdk-8-jdk'
           
         }
       } 
